@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Character from "./Character";
 import Pagination from '@mui/material/Pagination';
+import { fetchCharacter } from "../services/character";
+import styles from './Character.module.css';
 
 interface CharacterData {
     name: string;
@@ -18,8 +20,8 @@ const CharacterFeed: React.FC = () => {
 
         const fetchCharacters = async () => {
             setLoading(true);
-            const res = await axios.get(`https://rickandmortyapi.com/api/character/?page=${page}`);
-            setCharacters(res.data.results);
+            const data = await fetchCharacter(page);
+            setCharacters(data.results);
             setLoading(false);
         };
 
@@ -29,12 +31,16 @@ const CharacterFeed: React.FC = () => {
     if(loading) return <h1>Loading...</h1>
 
     return (
-        <div style={{display:'flex', flexWrap:'wrap', justifyContent:'space-around'}}>
-            {characters.map((character, index) => (
-                <Character key={index} name={character.name} image={character.image} />
-            ))}
-            <Pagination count={10} page={page} onChange={(event, value) => setPage(value)} />      
+        <div>
+            <div className={styles.characterContainer}>
+                {characters.map((character, index) => (
+                <Character key={index} name={character.name} image={character.image} />))}
+            </div>
+            <div className={styles.paginationContainer}>
+                <Pagination count={10} page={page} onChange={(event, value) => setPage(value)} /> 
+            </div>
         </div>
+        
     );
 };
 

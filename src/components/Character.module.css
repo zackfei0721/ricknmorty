@@ -1,0 +1,34 @@
+
+.characterCard {
+    background-color: rgba(var(--foreground-rgb), 0.5);
+    /*width: calc(100% / 3 - 30px);*/
+    width: 200px;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .characterCard img {
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid red;
+    height: auto;
+  }
+  
+  .characterCard h3 {
+    /* margin-top: 20px; */
+    margin: 15px;
+  }
+  
+  .characterContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .paginationContainer {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+  }
+  

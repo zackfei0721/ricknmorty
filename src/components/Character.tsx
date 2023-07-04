@@ -9,6 +9,7 @@ const Character: React.FC<CharacterProps> = ({ name, image}) => {
     return (
         <div style={{ textAlign: 'center' }}>
             <img src={image} alt={name} style={{width: '200px'}}/>
+            <h3>{name}</h3>
         </div>
     )
 }
