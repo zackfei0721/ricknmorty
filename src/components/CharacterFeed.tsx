@@ -40,7 +40,7 @@ const CharacterFeed: React.FC = () => {
                 margin: '0 auto',
                 border: '2px solid black',
                 borderRadius: '10px',
-                width: '50%',
+                width: '1000px',
                 justifyContent: 'center',
             }}>
                 {characters.map((character, index) => (
@@ -51,7 +51,7 @@ const CharacterFeed: React.FC = () => {
                 justifyContent: 'center',
                 padding: '15px',
             }}>
-                <Pagination count={10} page={page} onChange={(event, value) => setPage(value)} /> 
+                <Pagination count={20} page={page} onChange={(event, value) => setPage(value)} /> 
             </div>
         </div>
         

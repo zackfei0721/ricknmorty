@@ -7,11 +7,6 @@ interface CharacterProps {
     image: string;
 }
 
-const nameStyle = {
-    margin: '15px',
-};
-
-
 const Character: React.FC<CharacterProps> = ({ name, image}) => {
     return (
         <div style={
@@ -25,9 +20,9 @@ const Character: React.FC<CharacterProps> = ({ name, image}) => {
                  style={{
                     width: '100%',
                     borderRadius: '50%',
-                    border: '2px solid red',
+                    border: '2px solid black',
                  }}/>
-            <h3 style={{margin: '15px'}}>{name}</h3>
+            <h3 style={{margin: '10px'}}>{name}</h3>
         </div>
     )
 }
