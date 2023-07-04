@@ -10,6 +10,8 @@ interface CharacterData {
     name: string;
     image: string;
 }
+  
+
 
 const CharacterFeed: React.FC = () => {
     const [characters, setCharacters] = useState<CharacterData[]>([]);
@@ -32,11 +34,23 @@ const CharacterFeed: React.FC = () => {
 
     return (
         <div>
-            <div className={styles.characterContainer}>
+            <div style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr 1fr 1fr',
+                margin: '0 auto',
+                border: '2px solid black',
+                borderRadius: '10px',
+                width: '50%',
+                justifyContent: 'center',
+            }}>
                 {characters.map((character, index) => (
                 <Character key={index} name={character.name} image={character.image} />))}
             </div>
-            <div className={styles.paginationContainer}>
+            <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                padding: '15px',
+            }}>
                 <Pagination count={10} page={page} onChange={(event, value) => setPage(value)} /> 
             </div>
         </div>

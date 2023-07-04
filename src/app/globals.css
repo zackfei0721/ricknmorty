@@ -2,51 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
   color: black;
   background: white;
-}
-
-.character-card {
-  background-color: rgba(var(--foreground-rgb), 0.5);
-  width: calc(100% / 3 - 30px);
-  padding: 15px;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-.character-card img {
-  width: 100%;
-  border-radius: 50%;
-  height: auto;
-}
-
-.character-card h3 {
-  margin-top: 20px;
-}
-
-.character-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.pagination-container {
-  display: flex;
-  justify-content: center;
-  padding: 15px;
 }
